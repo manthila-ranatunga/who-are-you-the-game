@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who are you?</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div id="title-container">
+      <h1>Who are you?</h1>
+    </div>
+
+    <div id="info-btn-container">
+      <button id="instructions-btn" onclick="viewInstructions()">
+        Instructions
+      </button>
+      <button id="about-btn" onclick="viewAbout()">About</button>
+    </div>
+
+    <div id="info-p-container">
+      <p id="instructions-el"></p>
+      <p id="about-el"></p>
+    </div>
+    <div id="playspace-container">
+      <div id="question-container">
+        <h1 id="question-el"></h1>
+      </div>
+
+      <div id="option-container">
+        <button id="prev-list-btn" onclick="prevQuestionList()">
+          View Previous
+        </button>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+      </div>
+      <div id="prev-list-container">
+        <p id="prevList-el"></p>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
