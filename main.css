@@ -139,13 +139,12 @@ a {
 #prev-list-container {
   margin: 0 auto;
   margin-top: -20px;
-  max-width: 100%;
+  max-width: 80%;
   text-align: center;
 }
 #prev-list-container p {
   display: block;
   line-height: 1.2rem;
-  white-space: pre;
 }
 
 @media only screen and (max-width: 600px) {
