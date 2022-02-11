@@ -226,9 +226,10 @@ let prevQuestions = [];
 let currentQuestion = 'Click "Next" when you\'re ready.';
 
 let instructions =
-  'The game is made to be played by 2 or more players, but solo is possible as well as a mental exercise. Click "Next" to go to the next question*, where everyone takes turns answering in detail as honestly as they want. Click "View Previous" to see the questions that you have gone through. The aim of the game is to get to know the other person/people better. Enjoy! <br><br> *The questions were not written by me; They were sourced from <a href="https://thoughtcatalog.com/rania-naim/2016/02/40-deep-questions-to-ask-if-you-really-want-to-get-to-know-someone/">Thought Catalog</a>.';
+  'The game is made to be played by 2 or more players, but solo is possible as well as a mental exercise. Click "Next" to go to the next question*, where everyone takes turns answering in detail as honestly as they want. They are chosen at random from a list of 200+ questions. Click "View Previous" to see the questions that you have gone through. The aim of the game is to get to know the other person/people better. Enjoy! <br><br> *The questions were not written by me; They were sourced from <a href="https://thoughtcatalog.com/rania-naim/2016/02/40-deep-questions-to-ask-if-you-really-want-to-get-to-know-someone/">Thought Catalog</a>.';
 
-let about = "I love ";
+let about =
+  "I love thinking about and answering deep questions by myself and with friends. I made this so that me and anyone who also likes doing that can use it to get to know each other better (and also for me to practice web dev). I will be updating/adding to the list of questions as time goes.<br><br>- Manthila";
 
 let instructionsShowing = false;
 let aboutShowing = false;
@@ -256,7 +257,7 @@ function viewInstructions() {
 function viewAbout() {
   if (!aboutShowing) {
     instructionsEl.textContent = "";
-    aboutEl.textContent = about;
+    aboutEl.innerHTML = about;
     aboutBtn.style.backgroundColor = btnPressed;
     instructionsBtn.style.backgroundColor = btnNormal;
     aboutShowing = true;
