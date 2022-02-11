@@ -8,6 +8,9 @@ let preQuestionsBtn = document.getElementById("prev-list-btn");
 let questionEl = document.getElementById("question-el");
 let prevQuestionsEl = document.getElementById("prevList-el");
 
+let btnNormal = "rgba(255, 255, 255, 0.1)";
+let btnPressed = "rgba(255, 255, 255, 0.05)";
+
 const questions = [
   "What’s your philosophy in life?",
   "What’s the one thing you would like to change about yourself?",
@@ -105,8 +108,7 @@ const questions = [
   "If heaven is real and you died tomorrow, would you get in?",
   "Do you believe in fate?",
   "How do you think people see you?",
-  "If you had the ability to erase something that you did in the past, what",
-  "would it be?",
+  "If you had the ability to erase something that you did in the past, what would it be?",
   "What song makes you unconditionally happy?",
   "If you could have anybody else’s life, who’s would you take?",
   "What fictional character do you most relate to?",
@@ -120,12 +122,11 @@ const questions = [
   "If past lives are real, what was yours?",
   "Have you ever seen something you can’t explain?",
   "What is your biggest accomplishment?",
-  "If you could do one thing without suffering the consequences, what would",
-  "you do?",
+  "If you could do one thing without suffering the consequences, what would you do?",
   "What is the strangest dream you’ve ever had?",
   "What is the darkest thought you’ve ever had? What about the darkest thing you’ve never told anybody?",
   "Is there something out there, a thought, an idea, a current event, or a fear that you find deeply unsettling?",
-  "What would you consider to be your deepest fear? (This question can be really telling of the depth or lack thereof of a person.)",
+  "What would you consider to be your deepest fear? ",
   "Is there an activity that calms you? A place or a thing that makes you feel at ease?",
   "What makes you feel uneasy? Overwhelmed? Anxious?",
   "What is your favorite song and why?",
@@ -161,8 +162,7 @@ const questions = [
   "Do you believe more in fate or that we are the creators of our own destinies because we are governed by free will?",
   "Do you believe in extraterrestrial life? Elaborate on why or why not.",
   "Would you find more comfort in the theoretical idea that that we were the most advanced species in outer space or would you find more comfort in the idea that we weren’t?",
-  "What would be your thought process if you were presented with irrefutable evidence that a god didn’t exist? What would be your thought process if you were presented with irrefutable evidence that a god",
-  "did exist?",
+  "What would be your thought process if you were presented with irrefutable evidence that a god didn’t exist? What if god did exist?",
   "What do you think was there before the universe came into creation?",
   "Do you believe in other dimensions and parallel universes?",
   "How do you define art?",
@@ -219,16 +219,16 @@ const questions = [
   "Have you ever had a nickname? What is it?",
   "What really makes you angry?",
   "Would you rather win the lottery or work at the perfect job? And why?",
+  "What is your dream job? ",
 ];
 let prevQuestions = [];
 
 let currentQuestion = 'Click "Next" when you\'re ready.';
 
 let instructions =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+  'The game is made to be played by 2 or more players, but solo is possible as well as a mental exercise. Click "Next" to go to the next question*, where everyone takes turns answering in detail as honestly as they want. Click "View Previous" to see the questions that you have gone through. The aim of the game is to get to know the other person/people better. Enjoy! <br><br> *The questions were not written by me; They were sourced from <a href="https://thoughtcatalog.com/rania-naim/2016/02/40-deep-questions-to-ask-if-you-really-want-to-get-to-know-someone/">Thought Catalog</a>.';
 
-let about =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+let about = "I love ";
 
 let instructionsShowing = false;
 let aboutShowing = false;
@@ -241,14 +241,14 @@ questionEl.textContent = 'Click "Next" when you\'re ready.';
 function viewInstructions() {
   if (!instructionsShowing) {
     aboutEl.textContent = "";
-    instructionsEl.textContent = instructions;
-    instructionsBtn.style.backgroundColor = "#eb542f";
-    aboutBtn.style.backgroundColor = "#ee6c4d";
+    instructionsEl.innerHTML = instructions;
+    instructionsBtn.style.backgroundColor = btnPressed;
+    aboutBtn.style.backgroundColor = btnNormal;
     instructionsShowing = true;
     console.log("Viewing instructions.");
   } else {
     instructionsEl.textContent = "";
-    instructionsBtn.style.backgroundColor = "#ee6c4d";
+    instructionsBtn.style.backgroundColor = btnNormal;
     instructionsShowing = false;
   }
 }
@@ -257,13 +257,13 @@ function viewAbout() {
   if (!aboutShowing) {
     instructionsEl.textContent = "";
     aboutEl.textContent = about;
-    aboutBtn.style.backgroundColor = "#eb542f";
-    instructionsBtn.style.backgroundColor = "#ee6c4d";
+    aboutBtn.style.backgroundColor = btnPressed;
+    instructionsBtn.style.backgroundColor = btnNormal;
     aboutShowing = true;
     console.log("Viewing about.");
   } else {
     aboutEl.textContent = "";
-    aboutBtn.style.backgroundColor = "#ee6c4d";
+    aboutBtn.style.backgroundColor = btnNormal;
     aboutShowing = false;
   }
 }
@@ -284,16 +284,15 @@ function prevQuestionList() {
   if (!prevQuestionsShowing) {
     let prevQuestionsDisplay = "";
     for (let i = prevQuestions.length - 1; i > 0; i--) {
-      prevQuestionsDisplay += prevQuestions[i] + "\r\n";
+      prevQuestionsDisplay += prevQuestions[i] + "<br>";
     }
-    prevQuestionsEl.textContent = prevQuestionsDisplay;
-    preQuestionsBtn.style.backgroundColor = "#eb542f";
-    aboutBtn.style.backgroundColor = "#ee6c4d";
+    prevQuestionsEl.innerHTML = prevQuestionsDisplay;
+    preQuestionsBtn.style.backgroundColor = btnPressed;
     prevQuestionsShowing = true;
     console.log("Viewing previous questions.");
   } else {
     prevQuestionsEl.textContent = "";
-    preQuestionsBtn.style.backgroundColor = "#ee6c4d";
+    preQuestionsBtn.style.backgroundColor = btnNormal;
     prevQuestionsShowing = false;
   }
 }
