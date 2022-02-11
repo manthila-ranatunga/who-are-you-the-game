@@ -149,17 +149,31 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
+  #title-container {
+    max-width: 80%;
+  }
+  #title-container h1 {
+    font-size: 2.5rem;
+  }
   #info-btn-container {
     display: flex;
   }
-
   #info-btn-container button {
-    padding: 10px;
+    margin: 20px 10px;
   }
+
+  #question-container {
+    max-width: 94%;
+  }
+  #question-container h1 {
+    font-size: 2rem;
+  }
+
   #option-container {
     display: flex;
   }
   #option-container button {
-    padding: 10px;
+    margin: 0 10px;
+    margin-bottom: 20px;
   }
 }

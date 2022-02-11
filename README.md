@@ -1,1 +1,2 @@
-# who-are-you-the-game
+# Who are you? 
+This is my 4th Javascript project where I practiced using if-else statements, arrays and loops. I made a program/game that I can actually use in the future - to facilitate conversations with friends. 
